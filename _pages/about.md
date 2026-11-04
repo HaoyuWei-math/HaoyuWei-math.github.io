@@ -1,22 +1,111 @@
+
 ---
+layout: home
 permalink: /
 title: "About Me"
-author_profile: true
+author_profile: false
 redirect_from:
   - /about/
   - /about.html
 ---
 
-## About Me
+<div class="profile-hero">
 
-I am currently a Ph.D. candidate in Probability and Mathematical Statistics at the School of Mathematics and Statistics, Jiangsu Normal University.
+  <img class="profile-photo"
+       src="{{ '/images/profile.jpg' | relative_url }}"
+       alt="Haoyu Wei">
 
-My research interests include stochastic partial differential equations, stochastic analysis, averaging principles, and diffusion approximations.
+  <h1 class="profile-name">Haoyu Wei</h1>
 
-## Research Interests
+  <p class="profile-position">
+    Ph.D. Candidate in Probability and Mathematical Statistics
+  </p>
 
-- Stochastic Partial Differential Equations
-- Stochastic Analysis
-- Averaging Principles
-- Diffusion Approximation
-- Central Limit Theorems
+  <p class="profile-affiliation">
+    School of Mathematics and Statistics<br>
+    Jiangsu Normal University
+  </p>
+
+  <p class="profile-location">
+    Xuzhou, Jiangsu, China
+  </p>
+
+  <div class="profile-actions">
+    <a class="profile-button"
+       href="{{ '/files/CV.pdf' | relative_url }}">
+       Download CV
+    </a>
+
+    <a class="profile-button profile-button-outline"
+       href="mailto:{{ site.author.email }}">
+       Email Me
+    </a>
+  </div>
+
+</div>
+
+
+<section class="home-panel" data-tab-panel="about">
+
+  <h2>About Me</h2>
+
+  <p>
+    I am currently a Ph.D. candidate in Probability and
+    Mathematical Statistics at the School of Mathematics
+    and Statistics, Jiangsu Normal University.
+  </p>
+
+  <p>
+    My research interests include stochastic analysis,
+    stochastic partial differential equations (SPDEs),
+    averaging principles, and diffusion approximations.
+  </p>
+
+</section>
+
+
+<section class="home-panel" data-tab-panel="background" hidden>
+
+  <h2>Background</h2>
+
+  <h3>Education</h3>
+
+  <p>
+    <strong>Ph.D. in Probability and Mathematical Statistics</strong><br>
+    School of Mathematics and Statistics,
+    Jiangsu Normal University
+  </p>
+
+  <p>
+    Additional educational and academic experience
+    will be added here.
+  </p>
+
+</section>
+
+
+<section class="home-panel" data-tab-panel="research" hidden>
+
+  <h2>Research Interests</h2>
+
+  <ul>
+    <li>Stochastic Partial Differential Equations</li>
+    <li>Stochastic Analysis</li>
+    <li>Averaging Principles</li>
+    <li>Diffusion Approximation</li>
+    <li>Central Limit Theorems</li>
+  </ul>
+
+</section>
+
+
+<section class="home-panel" data-tab-panel="talks" hidden>
+
+  <h2>Talks</h2>
+
+  <p>
+    Information about academic talks, conference presentations,
+    and seminars will be added here.
+  </p>
+
+</section>
