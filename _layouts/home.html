@@ -1,1 +1,129 @@
 
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+<head>
+  {% include head.html %}
+  {% include head/custom.html %}
+</head>
+
+<body class="academic-homepage">
+
+  {% include browser-upgrade.html %}
+
+  <div class="academic-home">
+
+    <!-- Left navigation -->
+    <aside class="academic-sidebar">
+
+      <div class="sidebar-brand">
+        <a href="{{ base_path }}/">
+          {{ site.author.name | default: site.title }}
+        </a>
+      </div>
+
+      <div class="sidebar-label">PERSONAL WEBSITE</div>
+
+      <nav class="sidebar-nav" aria-label="Main navigation">
+
+        <button class="home-nav-link active"
+                data-tab-target="about">
+          <span class="nav-icon">⌂</span>
+          About me
+        </button>
+
+        <button class="home-nav-link"
+                data-tab-target="background">
+          <span class="nav-icon">▤</span>
+          Background
+        </button>
+
+        <button class="home-nav-link"
+                data-tab-target="research">
+          <span class="nav-icon">◇</span>
+          Research
+        </button>
+
+        <button class="home-nav-link"
+                data-tab-target="talks">
+          <span class="nav-icon">✎</span>
+          Talks
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+        {% if site.author.email %}
+        <a href="mailto:{{ site.author.email }}">
+          Contact
+        </a>
+        {% endif %}
+      </div>
+
+    </aside>
+
+    <!-- Main content -->
+    <main class="academic-main">
+
+      <div class="academic-content">
+        {{ content }}
+      </div>
+
+      <footer class="academic-footer">
+        © {{ site.time | date: '%Y' }} {{ site.author.name }}
+      </footer>
+
+    </main>
+
+  </div>
+
+  {% include scripts.html %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const buttons = document.querySelectorAll(
+        ".home-nav-link"
+      );
+
+      const panels = document.querySelectorAll(
+        "[data-tab-panel]"
+      );
+
+      function activateTab(tabName) {
+
+        buttons.forEach(function (button) {
+          button.classList.toggle(
+            "active",
+            button.dataset.tabTarget === tabName
+          );
+        });
+
+        panels.forEach(function (panel) {
+          const isActive =
+            panel.dataset.tabPanel === tabName;
+
+          panel.hidden = !isActive;
+          panel.classList.toggle("active", isActive);
+        });
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          activateTab(button.dataset.tabTarget);
+        });
+      });
+
+      activateTab("about");
+
+    });
+  </script>
+
+</body>
+</html>
+
