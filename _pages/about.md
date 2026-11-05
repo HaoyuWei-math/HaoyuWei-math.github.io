@@ -108,3 +108,16 @@ author_profile: false
   </p>
 
 </section>
+
+
+<section class="home-panel" data-tab-panel="academic-activities" hidden>
+
+  <h2>Academic-Activities</h2>
+
+  <p>
+    Information about academic talks, conference presentations,
+    and seminars will be added here.
+  </p>
+
+</section>
+
